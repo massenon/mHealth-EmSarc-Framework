@@ -59,5 +59,4 @@ python manage.py runserver
 The replication package contains:
 -   The source code for the MTL framework in `analysis_engine/`.
 -   The Django web application in `mhealth_analyzer/`.
--   The dataset generation script `generate_data.py`.
 -   The annotated dataset (or a sample) can be found in the `data/` directory.

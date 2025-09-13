@@ -1,0 +1,16 @@
+# ==========================================================
+# mHealth-EmSarc-Framework Dependencies
+# ==========================================================
+
+# Core Web Framework
+django
+
+# Machine Learning & NLP
+torch
+transformers
+scikit-learn
+
+# Data Handling & Utilities
+pandas
+numpy
+faker

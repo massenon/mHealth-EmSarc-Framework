@@ -1,0 +1,126 @@
+# ===================================================================
+# General Python ignore
+# ===================================================================
+
+# Byte-compiled / optimized / C files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+# Usually these files are in 'dist' folder, but they may appear in the root directory
+*.manifest
+*.spec
+
+
+# ===================================================================
+# Virtual Environments - THIS IS THE MOST IMPORTANT PART FOR YOUR ERROR
+# ===================================================================
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+
+# ===================================================================
+# Django Specific
+# ===================================================================
+
+# Local database files
+db.sqlite3
+db.sqlite3-journal
+
+# Local settings files (a common pattern to keep secrets out of git)
+local_settings.py
+
+# User-uploaded media files
+media/
+
+# Collected static files for deployment
+staticfiles/
+
+
+# ===================================================================
+# Machine Learning / Data Science Specific
+# ===================================================================
+
+# Large data files
+# NOTE: Your sample CSV is small and can be committed.
+# If you have large datasets, uncomment the line below or specify them.
+# data/
+
+# Trained models are large and should not be in Git.
+# Use Git LFS for them if needed, but ignore them by default.
+models/
+*.pt
+*.pth
+*.bin
+*.h5
+*.onnx
+
+# Caches for libraries like Hugging Face Transformers
+.cache/
+hf_cache/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+
+# ===================================================================
+# IDEs and Editors
+# ===================================================================
+
+# PyCharm
+.idea/
+
+# VS Code
+.vscode/
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim
+*.swp
+*.swo
+
+
+# ===================================================================
+# OS-generated files
+# ===================================================================
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+ehthumbs.d

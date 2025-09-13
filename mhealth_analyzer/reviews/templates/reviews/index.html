@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mHealth-EmSarc Framework</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background-color: #f4f7f9; color: #333; display: flex; justify-content: center; padding-top: 50px; }
+        .container { background: white; padding: 40px; border-radius: 12px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); width: 100%; max-width: 700px; }
+        h1 { color: #1a253c; text-align: center; }
+        textarea { width: 100%; height: 120px; padding: 12px; border-radius: 8px; border: 1px solid #ccc; font-size: 16px; margin-top: 10px; box-sizing: border-box; resize: vertical; }
+        .submit-btn { display: block; width: 100%; padding: 15px; background-color: #007bff; color: white; border: none; border-radius: 8px; font-size: 18px; font-weight: bold; cursor: pointer; margin-top: 20px; }
+        .submit-btn:hover { background-color: #0056b3; }
+        .results-container { margin-top: 30px; border-top: 1px solid #eee; padding-top: 20px; }
+        .result-item { display: flex; justify-content: space-between; padding: 15px; background-color: #f8f9fa; border-radius: 8px; margin-bottom: 10px; font-size: 18px; }
+        .result-label { font-weight: bold; color: #495057; }
+        .result-value { font-weight: bold; }
+        .sarcastic { color: #dc3545; }
+        .emotion { color: #28a745; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>mHealth Emotion & Sarcasm Analyzer</h1>
+        <form method="post">
+            {% csrf_token %}
+            <label for="review_text">Enter an mHealth App Review:</label>
+            <textarea name="review_text" id="review_text" placeholder="e.g., 'Great update. The app now crashes and deletes all my blood sugar readings. Fantastic feature.'">{% if submitted_text %}{{ submitted_text }}{% endif %}</textarea>
+            <button type="submit" class="submit-btn">Analyze Review</button>
+        </form>
+
+        {% if results %}
+        <div class="results-container">
+            <h2>Analysis Results</h2>
+            {% if results.error %}
+                <p style="color: red;">{{ results.error }}</p>
+            {% else %}
+                <div class="result-item">
+                    <span class="result-label">Sarcasm Detection:</span>
+                    <span class="result-value sarcastic">{{ results.sarcasm_prediction }} ({{ results.sarcasm_confidence }})</span>
+                </div>
+                <div class="result-item">
+                    <span class="result-label">Emotion Detected:</span>
+                    <span class="result-value emotion">{{ results.emotion_prediction }} ({{ results.emotion_confidence }})</span>
+                </div>
+            {% endif %}
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
