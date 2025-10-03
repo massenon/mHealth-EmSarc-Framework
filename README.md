@@ -36,9 +36,7 @@ source venv/bin/activate  # On Windows: venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-**4. Access to the sample dataset:**
-
-**5. Run the Django development server:**
+**4. Run the Django development server:**
 Navigate into the `mhealth_analyzer` directory and run the server.
 ```bash
 cd mhealth_analyzer
