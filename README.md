@@ -36,11 +36,7 @@ source venv/bin/activate  # On Windows: venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-**4. Generate the sample dataset:**
-This script will create a `data/mhealth_emsarc_sample.csv` file.
-```bash
-python generate_data.py
-```
+**4. Access to the sample dataset:**
 
 **5. Run the Django development server:**
 Navigate into the `mhealth_analyzer` directory and run the server.
